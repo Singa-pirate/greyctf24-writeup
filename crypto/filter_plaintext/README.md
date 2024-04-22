@@ -47,7 +47,7 @@ Now, we use these intermediate values in the first diagram, to recover `P1, P2, 
 - Send `C1 * 2` and receive `P1'`, obtain `IV_ECB = P1' XOR C1`
 - Send `C2 + C3 + ... + C1` and receive `P2', P3', ...`
 - Obtain `I2 = IV_ECB XOR P2', I3 = C2 XOR P2' XOR P3'` and so on
-- Obtain `P1 = IV_ECP XOR I1, P2 = I2 XOR C1 XOR P1` and so on
+- Obtain `P1 = IV_ECB XOR I1, P2 = I2 XOR C1 XOR P1` and so on
 - Use `P1 + P2 + ...` as key to AES CBC, with IV being `IV_CBC` and decrypt `ct` to obtain flag
 
 <h3>Flag</h3>
