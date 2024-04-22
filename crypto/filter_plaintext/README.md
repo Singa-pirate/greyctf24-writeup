@@ -56,6 +56,10 @@ Now, we use these intermediate values in the first diagram, to recover `P1, P2, 
 - Obtain `P1 = IV_ECP XOR I1, P2 = I2 XOR C1 XOR P1` and so on
 - Use `P1 + P2 + ...` as key to AES CBC, with IV being `IV_CBC` and decrypt `ct` to obtain flag
 
+<h3>Flag</h3>
+
+> grey{pcbc_d3crypt10n_0r4cl3_3p1c_f41l}
+
  <h3>PS</h3>
 
 There should be many different ways to break this custom encryption. For example, during the CTF, my approach to obtain the IV is rather complicated but it also works:

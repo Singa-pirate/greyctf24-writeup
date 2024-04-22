@@ -77,6 +77,8 @@ It was after hours of trying that I finally found a command that works on the se
 
 (Not sure if there's an easier way, would love to know the intended solution)
 
+(While creating this writeup, I just realised that `strings` was available on Saturday. OOPS!)
+
 <h3>Flag</h3>
 
 > grey{17'5_b0f_71m3}
