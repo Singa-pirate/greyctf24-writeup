@@ -14,9 +14,9 @@ The server first encrypts a random key using an encryption method similar to AES
 
 The server also uses AES CBC mode with the secret key above and a different IV to encrypt the flag. It displays the new IV and the encrypted flag to user.
 
-<h3>Analysis & Applrach</h3>
+<h3>Analysis & Approach</h3>
 
-To my knowledge, AES CBC mode cannot be cracked unless we have the key. So our goal is to find the secret key.
+To my knowledge, AES CBC mode cannot be cracked easily unless we have the key or a padding oracle. Without a padding oracle, our goal is to find the secret key.
 
 Notice that we have a decryption oracle - we can self-define any ciphertext to be decrypted. Of course, we can try to send the encrypted key, which will be decrypted to the key. However, this oracle is not that kind - any original block of the key will be filtered and not sent to us.
 
@@ -30,14 +30,8 @@ What if we send the same block `C1` twice? The same `I1` will be produced by the
 
 ![same_c1](same_c1.png)
 
-`P1` will be filtered out but `P1'` will be sent to us. Since
-$$
-P1' = C1 \oplus I1 \oplus IV \oplus I1 = C1 \oplus IV
-$$
-We derive
-$$
-IV = P1' \oplus C1
-$$
+`P1` will be filtered out but `P1'` will be sent to us. Since `P1' = C1 XOR I1 XOR IV XOR I1 = C1 xor IV`, we derive `IV = P1' XOR C1`.
+
 So this will give us the IV used by the custom encryption. Now, how do we recover the secret key? Notice from the first illustration that, as long as we have all the intermediate values and the IV, we can perform many XORs to get each plaintext block. In order to bypass the filter, why not we try to reorder the ciphertext blocks, for example:
 
 ![reordered](reordered.png)
@@ -68,12 +62,6 @@ There should be many different ways to break this custom encryption. For example
 
 - Send `C3C2C4...C1` to get `P3''P2''P4''...P1''`
 
-- $$
-  P2' = I2 \oplus IV \\
-  P3'' = I3 \oplus IV \\
-  P3' = C2 \oplus I2 \oplus IV \oplus P2' \oplus I3 \\
-  \Rightarrow P2' \oplus P3'' \oplus P3' = C2 \oplus IV \oplus P2' \\
-  \Rightarrow IV  = C2 \oplus P3'' \oplus P3'
-  $$
-
+- ![math](math.png)
+  
 - Learning point for me is to calm down and don't overcomplicate a challenge :smile:
