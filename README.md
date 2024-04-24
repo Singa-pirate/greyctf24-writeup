@@ -12,6 +12,10 @@ From 20th to 21st April, we participated in **Grey Cat The Flag 2024** qualifier
 
 [Filter Plaintext](./crypto/filter_plaintext/README.md)
 
+[Greyctf Survey](./web/greyctf-survey/README.md)
+
+[Phaser JS](./rev/phaser-js/README.md)
+
 <h3> Relevant websites </h3>
 
 [CTF website](https://ctfd.nusgreyhats.org/)

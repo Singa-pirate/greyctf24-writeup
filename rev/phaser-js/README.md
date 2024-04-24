@@ -33,11 +33,11 @@ Upon following the URL, inspecting the page source, we see the following HTML:
 </html>
 ```
 
-We see that there are two js files controlling this document. `phaser.min.js` is the Phaser library code, which is not worth inspecting. Upon inspecting `game.js`, it is an obfuscated script. Our task is to deobfuscate this script to see what it is doing, and whether we can bypass the game logic to obtain the flag.
+There are two js files controlling this document. `phaser.min.js` is the Phaser library code, which is not worth inspecting. Upon inspecting `game.js`, it is an obfuscated script. Our task is to deobfuscate this script to see what it is doing, and whether we can bypass the game logic to obtain the flag.
 
 ### Approach
 
-The first step is to use online tools to deobfuscate the script. We used [Willnode's](https://willnode.github.io/deobfuscator/). It nicely formats the script and turns all hexadecimal numbers into decimal numbers. The full deobfuscated is found in [game-original.js](./game-original.js). However, the script returned was not returned was not sufficient clear to decipher what the script is doing.
+The first step is to use online tools to deobfuscate the script. We used [Willnode's](https://willnode.github.io/deobfuscator/) deobfuscating tool. It nicely formats the script and turns all hexadecimal numbers into decimal numbers. The full deobfuscated script is found in [game-original.js](./game-original.js). However, the script returned was not sufficiently clear to decipher what the script is doing.
 
 First, I manually replace some of the script patterns with human-readable patterns, with the help of `Ctrl+H`.
 
@@ -54,15 +54,17 @@ to
 
 ```js
 sampleMethod() {
-  // method
+  // method body
 }
 ```
 
 * Replace dictionary-like syntax to method invocation syntax. For example, `object["sampleMethod"]` is replaced with `object.sampleMethod`.
 
-After the above steps, we have summations of numbers that can be replaced. However, replacing these expressions is not a simple task of `Ctrl+H`. From here, we start to deobfuscate from where `console.log` expression is found (because the flag is printed in the console with `console.log`).
+After the above steps, we still have summations of numbers. However, replacing these expressions is not a simple task of `Ctrl+H`. Replacing such expressions require evaluating them by hand. Given the large number of such summations, I need to pick the correct expressions to evaluate, in order to save time.
 
-Notice that the method `collectStar` is solely responsible for calculating the flag:
+From here, I start to deobfuscate from where `console.log` expression is found (because the flag is printed in the console with `console.log`).
+
+Notice that the method `create` is responsible for initiating data, and the method `collectStar` is solely responsible for calculating the flag:
 
 ```js
 create() {
