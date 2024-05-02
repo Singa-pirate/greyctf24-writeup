@@ -8,6 +8,10 @@
 > 
 > Author: daniao
 
+### Summary
+
+The challenge tests the skill of javascript deobfuscation. Being able to get what the script is doing, and automating the calculation, are key to obtaining the flag.
+
 ### Analysis
 
 Upon following the URL, inspecting the page source, we see the following HTML:

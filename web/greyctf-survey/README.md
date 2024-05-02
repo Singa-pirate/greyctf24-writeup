@@ -8,6 +8,10 @@
 >
 > http://challs.nusgreyhats.org:33334
 
+### Summary
+
+The challenge highlights the edge cases of the built-in functions in programming language, in this case, the `parseInt` function in javascript. One could find the behaviour of such edge cases in the documentation of the functions.
+
 ### Analysis
 
 Upon inspection of the source code, the flag is hidden at the following voting endpoint:

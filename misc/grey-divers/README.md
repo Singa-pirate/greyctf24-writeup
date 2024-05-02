@@ -18,6 +18,10 @@
 
 ![image](image-challenge.png)
 
+### Summary
+
+The challenge tests googling and reading skills. I had to sift through Hell Diver's wiki pages to find the answer.
+
 ### Analysis
 
 From the given image, there are a lot of possible paths from home that corresponds to a flag. So out task is to figure out the correct direction to move, to obtain the flag.
