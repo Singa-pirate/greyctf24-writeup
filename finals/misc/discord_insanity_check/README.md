@@ -22,6 +22,7 @@ No additional clue was given. After some pointless clicks and stalking random us
     - Hidden stuff in HTML
 
 <h3>Approach</h3>
+
 I found [this tool](https://github.com/JustOptimize/return-ShowHiddenChannels) which is a BetterDiscord plugin. It is able to display the metadata (but not messages) of restricted channels in a server. (wow!)
 
 ![hidden_channel](./hidden_channel.png)

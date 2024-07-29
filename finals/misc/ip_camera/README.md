@@ -75,13 +75,13 @@ We found a genuine `boa_template.conf` online and compared it with the malicious
 
 The root access may not be useful here since we don't have access to the server yet. Thus, the aliases may be the sus part. In order to test out, I found [this blog](https://lucidar.me/en/ip-camera/dlink-dcs-5222l/#pan-tilt) which explains the CGI APIs to pan / tilt the camera remotely.
 
-We can use for example, `/config/ptz_move.cgi?t=20&p=170` to move the camera, but we are not authorised to use the `/config` endpoint. Upon closer inspection, in our `boa.conf` both `/config` and `/ptz` are mapped to `/opt/ipnc/config/`. That means `/ptz/ptz_move.cgi?t=20&p=170` will be resolved to the same final path as well. It turns out that the `/ptz` alias is not filted and we are able to control the camera with this endpoint. Interesting!
+We can use for example, `/config/ptz_move.cgi?t=20&p=170` to move the camera, but we are not authorised to use the `/config` endpoint. Upon closer inspection, in our `boa.conf` both `/config` and `/ptz` are mapped to `/opt/ipnc/config/`. That means `/ptz/ptz_move.cgi?t=20&p=170` will be resolved to the same final path as well. It turns out that the `/ptz` alias is not filtered and we are able to control the camera with this endpoint. Interesting!
 
 
 <h3>Solution</h3>
 
 * Visit `http://192.168.2.69/common/info.cgi` to obtain information and get password
-* Use `http://192.168.2.69/ptz/ptz_move.cgi?t={tile_amount}&p={pan_amount} to control the camera
+* Use `http://192.168.2.69/ptz/ptz_move.cgi?t={tile_amount}&p={pan_amount}` to control the camera
 
 <h3>Flag</h3>
 
