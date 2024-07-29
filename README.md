@@ -13,6 +13,7 @@ We competed in the final round from 27th to 28th July. For the first time, we pu
 <h3> Links to challenge writeups </h3>
 
 <h5> Qualifiers </h5>
+
 * [Baby Fmtstr](./qualifiers/pwn/baby-fmtstr/README.md)
 * [Filter Plaintext](./qualifiers/crypto/filter_plaintext/README.md)
 * [Grey Divers](./qualifiers/misc/grey-divers/README.md)
@@ -23,6 +24,7 @@ We competed in the final round from 27th to 28th July. For the first time, we pu
 
 
 <h3> Relevant websites </h3>
+
 * [CTF website](https://ctfd.nusgreyhats.org/)
 * [CTFTime event](https://ctftime.org/event/2242)
 * [NUS Greyhats](https://nusgreyhats.org/)
