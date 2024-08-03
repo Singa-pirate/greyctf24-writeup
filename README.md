@@ -22,6 +22,17 @@ We competed in the final round from 27th to 28th July. For the first time, we pu
 
 <h5> Finals </h5>
 
+* [Baby RSA](./finals/crypto/babyrsa/README.md)
+* [HMAC-CRC](./finals/crypto/hmac-crc/README.md)
+* [Learning with mistakes](./finals/crypto/learning-with-mistakes/README.md)
+* [Name](./finals/hardware/name/README.md)
+* [Serialous](./finals/hardware/serialous/README.md)
+* [13-piece puzzle](./finals/misc/13-piece_puzzle/README.md)
+* [Discord insanity check](./finals/misc/discord_insanity_check/README.md)
+* [IP camera](./finals/misc/ip_camera/README.md)
+* [Poolside paradise or criminal hideout](./finals/misc/poolside_paradise_or_criminal_hideout/README.md)
+* [Flag shop](./finals/web/flag_shop/README.md)
+
 
 <h3> Relevant websites </h3>
 
